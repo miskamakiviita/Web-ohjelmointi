@@ -1,0 +1,434 @@
+
+/* =========================
+   YLEISET ASETUKSET
+========================= */
+
+:root {
+    --text: #262626;
+    --background: #fdfaf2;
+    --accent: #2a7f8f;
+    --accent-dark: #205f6b;
+    --white: #ffffff;
+    --light-green: #e7f0ee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background-color: var(--background);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* =========================
+   YLÄVALIKKO
+========================= */
+
+.site-header {
+    background-color: var(--background);
+    border-bottom: 1px solid #e5e1d8;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-content {
+    min-height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+    color: var(--accent);
+}
+
+/* =========================
+   PAINIKKEET
+========================= */
+
+.button {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+.button-primary:hover {
+    background-color: var(--accent-dark);
+}
+
+.button-outline {
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.button-outline:hover {
+    background-color: var(--white);
+    color: var(--text);
+}
+
+.button-light {
+    background-color: var(--background);
+    color: var(--accent-dark);
+}
+
+.button-light:hover {
+    background-color: var(--white);
+}
+
+/* =========================
+   ETUSIVUN HERO
+========================= */
+
+.hero {
+    background: linear-gradient(120deg, #205f6b, #2a7f8f);
+    color: var(--white);
+    padding: 115px 0;
+}
+
+.hero-content {
+    max-width: 1150px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.hero .eyebrow {
+    color: #d1e9e9;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 62px);
+    line-height: 1.12;
+    max-width: 750px;
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    font-size: 18px;
+    max-width: 620px;
+    margin-bottom: 32px;
+    color: #edf5f3;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   ESITTELY JA KURSSIKORTIT
+========================= */
+
+.intro-section {
+    padding-top: 85px;
+    padding-bottom: 85px;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+.section-heading h2,
+.cta-section h2 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.section-heading > p:last-child {
+    color: #555;
+}
+
+.course-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.course-card {
+    background-color: var(--white);
+    border: 1px solid #e9e5dc;
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.course-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--light-green);
+    color: var(--accent-dark);
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.course-card h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.course-card p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.course-card a {
+    color: var(--accent-dark);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* =========================
+   ALAOSAN TOIMINTAKEHOTE
+========================= */
+
+.cta-section {
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 70px 0;
+    text-align: center;
+}
+
+.cta-section .eyebrow {
+    color: #d1e9e9;
+}
+
+.cta-section p {
+    margin-bottom: 25px;
+}
+
+/* =========================
+   ALATUNNISTE
+========================= */
+
+.site-footer {
+    background-color: #262626;
+    color: var(--white);
+    padding: 35px 0;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+/* =========================
+   MUUT SIVUT JA LOMAKKEET
+========================= */
+
+.page-banner {
+    background-color: var(--light-green);
+    padding: 65px 0;
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.content-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.form-container {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: 10px;
+    border: 1px solid #e9e5dc;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    font: inherit;
+    background-color: var(--white);
+    color: var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"] {
+    border-color: #b42318;
+}
+
+.form-group fieldset {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.form-group legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.form-group .choice {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 8px 0;
+    font-weight: normal;
+}
+
+.form-group .choice input {
+    width: auto;
+}
+
+.error-message {
+    color: #b42318;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.success-message {
+    background-color: var(--light-green);
+    color: var(--accent-dark);
+    border-radius: 6px;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* =========================
+   MOBIILINÄKYMÄ
+========================= */
+
+@media (max-width: 750px) {
+
+    .header-content {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    .main-nav {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .main-nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .course-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2,
+    .cta-section h2 {
+        font-size: 28px;
+    }
+
+    .form-container {
+        padding: 22px;
+    }
+}

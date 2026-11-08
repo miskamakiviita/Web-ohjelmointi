@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ilmoittaudu Autokoulu Ajokaistan ajokorttikursseille Alajärvellä.">
+    <title>Ilmoittautuminen | Autokoulu Ajokaista</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">Ajokaista<span>.</span></a>
+
+            <nav class="main-nav" aria-label="Päänavigaatio">
+                <a href="index.html">Etusivu</a>
+                <a href="kurssit.html">Kurssit</a>
+                <a href="ilmoittaudu.html" aria-current="page">Ilmoittaudu</a>
+                <a href="yhteystiedot.html">Yhteystiedot</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-banner">
+            <div class="container">
+                <p class="eyebrow">ALOITA MATKASI</p>
+                <h1>Ilmoittaudu kurssille</h1>
+                <p>
+                    Täytä lomake huolellisesti.
+                    Olemme sinuun yhteydessä puhelimitse paikan vahvistamiseksi.
+                </p>
+            </div>
+        </section>
+
+        <section class="container content-section">
+
+            <div class="form-container">
+
+                <div class="section-heading">
+                    <h2>Ilmoittautumistiedot</h2>
+                    <p>
+                        Täytä kaikki pakolliset kentät.
+                        Pakolliset kentät on merkitty tähdellä (*).
+                    </p>
+                </div>
+
+                <form id="registrationForm" novalidate>
+
+                    <div id="errorSummary"
+                         class="error-message"
+                         role="alert"
+                         tabindex="-1"
+                         hidden>
+                    </div>
+
+                    <h3>1. Henkilötiedot</h3>
+
+                    <div class="form-group">
+                        <label for="firstName">Etunimi *</label>
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            autocomplete="given-name"
+                            required>
+                        <span class="error-message" id="firstNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Sukunimi *</label>
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            autocomplete="family-name"
+                            required>
+                        <span class="error-message" id="lastNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birthDate">Syntymäaika *</label>
+                        <input
+                            type="date"
+                            id="birthDate"
+                            name="birthDate"
+                            required>
+                        <span class="error-message" id="birthDateError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Puhelinnumero *</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Esim. 040 123 4567"
+                            autocomplete="tel"
+                            required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Sähköpostiosoite *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="esimerkki@email.com"
+                            autocomplete="email"
+                            required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <hr>
+
+                    <h3>2. Kurssin valinta</h3>
+
+                    <div class="form-group">
+                        <label for="course">Valitse haluamasi kurssi *</label>
+                        <select id="course" name="course" required>
+                            <option value="">Valitse kurssi</option>
+                            <option value="B">B – Henkilöautokurssi</option>
+                            <option value="A">A – Moottoripyöräkurssi</option>
+                            <option value="T">T – Traktorikurssi</option>
+                        </select>
+                        <span class="error-message" id="courseError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <fieldset>
+                            <legend>Aiemmat ajokortit *</legend>
+
+                            <label class="choice">
+                                <input type="checkbox" name="previousLicenses" value="B">
+                                B – Henkilöauto
+                            </label>
+
+                            <label class="choice">
+                                <input type="checkbox" name="previousLicenses" value="A">
+                                A – Moottoripyörä
+                            </label>
+
+                            <label class="choice">
+                                <input type="checkbox" name="previousLicenses" value="T">
+                                T – Traktori
+                            </label>
+
+                            <label class="choice">
+                                <input type="checkbox" name="previousLicenses" value="none">
+                                Ei aiempia ajokortteja
+                            </label>
+                        </fieldset>
+                        <span class="error-message" id="licensesError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <fieldset>
+                            <legend>Tarvitsetko teoriakurssin englanniksi? *</legend>
+
+                            <label class="choice">
+                                <input type="radio" name="english" value="Kyllä" required>
+                                Kyllä
+                            </label>
+
+                            <label class="choice">
+                                <input type="radio" name="english" value="En" required>
+                                En
+                            </label>
+                        </fieldset>
+                        <span class="error-message" id="englishError"></span>
+                    </div>
+
+                    <hr>
+
+                    <div id="guardianSection" hidden>
+
+                        <h3>3. Huoltajan tiedot</h3>
+
+                        <p>
+                            Koska olet alle 18-vuotias, tarvitsemme myös
+                            huoltajasi yhteystiedot.
+                        </p>
+
+                        <div class="form-group">
+                            <label for="guardianName">Huoltajan nimi *</label>
+                            <input
+                                type="text"
+                                id="guardianName"
+                                name="guardianName"
+                                autocomplete="name">
+                            <span class="error-message" id="guardianNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guardianPhone">Huoltajan puhelinnumero *</label>
+                            <input
+                                type="tel"
+                                id="guardianPhone"
+                                name="guardianPhone"
+                                placeholder="Esim. 040 123 4567"
+                                autocomplete="tel">
+                            <span class="error-message" id="guardianPhoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guardianEmail">Huoltajan sähköposti *</label>
+                            <input
+                                type="email"
+                                id="guardianEmail"
+                                name="guardianEmail"
+                                placeholder="huoltaja@email.com"
+                                autocomplete="email">
+                            <span class="error-message" id="guardianEmailError"></span>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="form-group">
+                        <label class="choice">
+                            <input type="checkbox" id="confirmInfo" required>
+                            Vakuutan antamani tiedot oikeiksi. *
+                        </label>
+                        <span class="error-message" id="confirmInfoError"></span>
+                    </div>
+
+                    <button type="submit" class="button button-primary">
+                        Lähetä ilmoittautumispyyntö
+                    </button>
+
+                    <div id="successMessage"
+                         class="success-message"
+                         role="status"
+                         tabindex="-1"
+                         hidden>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p><strong>Autokoulu Ajokaista</strong></p>
+            <p>Alajärvi | Turvallisesti tien päälle</p>
+            <p>&copy; 2026 Autokoulu Ajokaista</p>
+        </div>
+    </footer>
+
+</body>
+</html>
