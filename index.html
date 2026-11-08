@@ -1,11 +1,120 @@
+
 <!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <title>Ensimmäinen sivuni</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Autokoulu Ajokaista tarjoaa B-, A- ja T-ajokorttikoulutusta Alajärvellä. Tutustu kursseihin ja ilmoittaudu mukaan!">
+    <title>Autokoulu Ajokaista | Etusivu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Moi, olen Miska</h1>
-    <p>Tämä on ensimmäinen sivuni.</p>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">Ajokaista<span>.</span></a>
+
+            <nav class="main-nav" aria-label="Päänavigaatio">
+                <a href="index.html" aria-current="page">Etusivu</a>
+                <a href="kurssit.html">Kurssit</a>
+                <a href="ilmoittaudu.html">Ilmoittaudu</a>
+                <a href="yhteystiedot.html">Yhteystiedot</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <p class="eyebrow">AUTOKOULU ALAJÄRVELLÄ</p>
+
+                <h1>Matka kohti omaa ajokorttia alkaa tästä.</h1>
+
+                <p class="hero-text">
+                    Autokoulu Ajokaistalla opit ajamaan turvallisesti,
+                    itsevarmasti ja omassa tahdissasi. Me autamme sinua
+                    matkalla kohti uusia vapauksia liikenteessä.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="kurssit.html" class="button button-primary">
+                        Tutustu kursseihin
+                    </a>
+
+                    <a href="ilmoittaudu.html" class="button button-outline">
+                        Ilmoittaudu mukaan
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container intro-section">
+            <div class="section-heading">
+                <p class="eyebrow">AJOKORTTI ELÄMÄÄN</p>
+                <h2>Sinun matkasi, meidän opastuksellamme</h2>
+                <p>
+                    Tarjoamme laadukasta ajo-opetusta Alajärvellä.
+                    Olipa tavoitteesi ensimmäinen ajokortti tai uusi
+                    ajokorttiluokka, autamme sinua onnistumaan.
+                </p>
+            </div>
+
+            <div class="course-cards">
+                <article class="course-card">
+                    <span class="course-number">B</span>
+                    <h3>Henkilöauto</h3>
+                    <p>
+                        Opi ajamaan henkilöautoa turvallisesti ja
+                        hanki itsellesi B-ajokortti.
+                    </p>
+                    <a href="kurssit.html">Tutustu kurssiin →</a>
+                </article>
+
+                <article class="course-card">
+                    <span class="course-number">A</span>
+                    <h3>Moottoripyörä</h3>
+                    <p>
+                        Lähde tien päälle kahdella pyörällä
+                        ja opi moottoripyöräilyn perusteet.
+                    </p>
+                    <a href="kurssit.html">Tutustu kurssiin →</a>
+                </article>
+
+                <article class="course-card">
+                    <span class="course-number">T</span>
+                    <h3>Traktori</h3>
+                    <p>
+                        Hanki traktorin ajamiseen tarvittavat
+                        taidot ja T-ajokortti.
+                    </p>
+                    <a href="kurssit.html">Tutustu kurssiin →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <p class="eyebrow">SEURAAVA ASKEL ODOTTAA</p>
+                <h2>Oletko valmis aloittamaan?</h2>
+                <p>
+                    Tutustu alkaviin kursseihin ja löydä itsellesi sopiva
+                    vaihtoehto.
+                </p>
+                <a href="ilmoittaudu.html" class="button button-light">
+                    Ilmoittaudu kurssille
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p><strong>Autokoulu Ajokaista</strong></p>
+            <p>Alajärvi | Turvallisesti tien päälle</p>
+            <p>&copy; 2026 Autokoulu Ajokaista</p>
+        </div>
+    </footer>
+
 </body>
 </html>
