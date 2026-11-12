@@ -1,0 +1,1 @@
+tekoälyavusteisesti hommaa läpi
