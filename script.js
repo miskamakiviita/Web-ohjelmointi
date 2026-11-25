@@ -407,5 +407,7 @@ async function haeApiTiedot() {
     }
 }
 
-// Käynnistetään haku
-haeApiTiedot();
+// Käynnistetään API-haku vain, jos tulosten näyttö löytyy
+if (document.getElementById("api-tulokset")) {
+    haeApiTiedot();
+}
