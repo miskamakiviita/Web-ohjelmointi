@@ -387,6 +387,11 @@ async function haeApiTiedot() {
 
         const tulokset = document.getElementById("api-tulokset");
 
+        if (!tulokset) {
+            console.log("API-tulosten näyttöelementtiä ei löydy tältä sivulta.");
+            return;
+        }
+
         tulokset.innerHTML = "";
 
         tiedot.forEach(function (tieto) {
