@@ -375,3 +375,32 @@ if (form) {
     });
 
 }
+
+// Haetaan tietoja API:sta
+async function haeApiTiedot() {
+    try {
+        const vastaus = await fetch(
+            "https://jsonplaceholder.typicode.com/posts?_limit=5"
+        );
+
+        const tiedot = await vastaus.json();
+
+        const tulokset = document.getElementById("api-tulokset");
+
+        tulokset.innerHTML = "";
+
+        tiedot.forEach(function (tieto) {
+            const kohta = document.createElement("p");
+
+            kohta.textContent = tieto.title;
+
+            tulokset.appendChild(kohta);
+        });
+
+    } catch (virhe) {
+        console.error("API-haku epäonnistui:", virhe);
+    }
+}
+
+// Käynnistetään haku
+haeApiTiedot();
